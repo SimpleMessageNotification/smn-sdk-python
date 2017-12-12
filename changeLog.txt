@@ -1,0 +1,2 @@
+2017-12-10 Version: 1.0.0
+1. HuaweiCloud SMN(Simple Message Notification) Service Support Python esay to use by sdk
