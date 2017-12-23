@@ -1,4 +1,4 @@
-Metadata-Version: 1.2
+Metadata-Version: 1.1
 Name: smn-sdk-python
 Version: 1.0.0
 Summary: This is HuaweiCloud SMN(Simple Message Notification) Service Python SDK.
@@ -35,7 +35,5 @@ Classifier: Development Status :: 5 - Production/Stable
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: Apache Software License
 Classifier: Programming Language :: Python
-Classifier: Programming Language :: Python :: 2.6
 Classifier: Programming Language :: Python :: 2.7
 Classifier: Topic :: Software Development
-Requires-Python: <3
