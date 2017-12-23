@@ -24,7 +24,7 @@ URL = "http://developer.huaweicloud.com/dev/sdk"
 TOPDIR = os.path.dirname(__file__) or "."
 VERSION = __import__(PACKAGE).__version__
 
-desc_file = open("README.md")
+desc_file = open("README.rst")
 try:
     LONG_DESCRIPTION = desc_file.read()
 finally:
@@ -44,9 +44,6 @@ setup(
     include_package_data=True,
     python_requires='<3',
     platforms='any',
-    install_requires=[
-        'pycrypto>=2.6.1'
-    ],
     classifiers=(
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
