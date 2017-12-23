@@ -13,6 +13,13 @@
 
 from setuptools import setup, find_packages
 import os
+import sys
+
+if sys.version_info < (2, 7):
+    sys.stderr.write("ERROR: SMN python sdk requires Python Version 2.7 or above to support TLS 1.1\n")
+    sys.stderr.write("The ssl module in Python 2.6 supports up to TLS 1.0 only. If you do not wish to introduce additional dependencies (such as pyOpenSSL as you suggest) you will need to upgrade to Python 2.7 or 3.x to get support for newer versions of TLS.\n\n")
+    sys.stderr.write("Your Python version is %s.%s.%s.\n" % sys.version_info[:3])
+    sys.exit(1)
 
 PACKAGE = "smnsdkcore"
 NAME = "smn-sdk-python"
@@ -30,6 +37,7 @@ try:
 finally:
     desc_file.close()
 
+requires = []
 setup(
     name=NAME,
     version=VERSION,
@@ -42,14 +50,14 @@ setup(
     keywords=["smn", "sdk", "HuaweiCloud"],
     packages=find_packages(),
     include_package_data=True,
-    python_requires='<3',
+    python_requires='>=2.7',
+    install_requires=requires,
     platforms='any',
     classifiers=(
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Topic :: Software Development',
     )
