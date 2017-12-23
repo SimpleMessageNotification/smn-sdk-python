@@ -1,8 +1,10 @@
+LICENSE
+MANIFEST.in
+README.rst
 setup.py
 smn_sdk_python.egg-info/PKG-INFO
 smn_sdk_python.egg-info/SOURCES.txt
 smn_sdk_python.egg-info/dependency_links.txt
-smn_sdk_python.egg-info/requires.txt
 smn_sdk_python.egg-info/top_level.txt
 smnsdkcore/__init__.py
 smnsdkcore/client.py
