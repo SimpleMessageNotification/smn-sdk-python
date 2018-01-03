@@ -13,7 +13,7 @@ Install step:
 4. exectue python setup.py install
 
 
-Example for use sdk to send SMS:
+Example for use sdk to send SMS：
 
 You can open the smn-sdk-python-example/sendSmsDemo.py, config the domain_name/password, and the region_id which sign_id belong, sms sign_id, phoneNumber; then run the demo, it will send a sms message to the phoneNumber. The command is,
 
