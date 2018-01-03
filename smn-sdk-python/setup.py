@@ -20,6 +20,10 @@ if sys.version_info < (2, 7):
     sys.stderr.write("The ssl module in Python 2.6 supports up to TLS 1.0 only. If you do not wish to introduce additional dependencies (such as pyOpenSSL as you suggest) you will need to upgrade to Python 2.7 or 3.x to get support for newer versions of TLS.\n\n")
     sys.stderr.write("Your Python version is %s.%s.%s.\n" % sys.version_info[:3])
     sys.exit(1)
+if sys.version_info > (3, 0):
+    sys.stderr.write("ERROR: Not support python3. Support python version: 2.7<= version < 3.0");
+    sys.exit(1)
+
 
 PACKAGE = "smnsdkcore"
 NAME = "smn-sdk-python"
