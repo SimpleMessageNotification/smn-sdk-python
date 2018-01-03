@@ -39,8 +39,6 @@ from smnsdkrequests.v20171105 import Publish
 from smnsdkrequests.v20171105.Publish import PublishMessage, PublishMessageWithStruct,\
     PublishMessageWithTemplate
 
-# set_stream_logger('')
-client = SMNClient(domain_name='XXXXXX', username='XXXXXX', password='XXXXXX', region_id='cn-north-1')
 
 def demoCreateTopic(topic_name, display_name):
     request = CreateTopic()
@@ -193,7 +191,8 @@ def demoPublishMessageWithTemplate(topic_urn, message_template_name, tags = None
 
 if __name__ == "__main__":
     #swith on/off the logger
-    #set_stream_logger('')
+    # set_stream_logger('')
+    client = SMNClient(domain_name='XXXXXX', username='XXXXXX', password='XXXXXX', region_id='cn-north-1')
 
     test_urn = 'urn:smn:cn-north-1:3bf82e180e3742b8ac3019e9c2ef7095:python-sdk'
     policy_authrozie_to_domain_id = ['123456180e3742b8ac3019e9c2ef7095']
