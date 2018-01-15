@@ -80,7 +80,7 @@ def demoUpdateSmsEvent(topic_urn_for_fail=None, topic_urn_for_reply=None, topic_
 if __name__ == "__main__":
     #swith on/off the logger
     #set_stream_logger('')
-    client = SMNClient(domain_name='XXXXXX', username='XXXXXX', password='XXXXXX', region_id='cn-north-1')
+    client = SMNClient(username='YourAccountUserName', domain_name='YourAccountDomainName', password='YourAccountPassword', region_id='YourRegionName')
     sms_sign_id = '3fe9fae14729495990cf1a3218fe2aca'
     phoneNumber = '+8618682160029'
     message = '您的验证码是:1234，请查收'
