@@ -1,9 +1,9 @@
 # smn-sdk-python
 
 
-欢迎使用SMN服务Python SDK。SMN服务Python SDK 能简化你使用SMN服务的复杂程度。
+欢迎使用SMN服务Python SDK。SMN服务Python SDK 能简化你使用SMN服务的复杂程度。SMN的使用说明请查阅[SMN的SDK使用说明](https://github.com/SimpleMessageNotification/smn-sdk-python/wiki) 
 
-Welcome to use the SMN Services Python SDK. SMN Services The Python SDK simplifies the complexity of your use of SMN services.
+Welcome to use the SMN Services Python SDK. SMN Services The Python SDK simplifies the complexity of your use of SMN services.smn instructions for use, please refer to [SMN's SDK instructions](https://github.com/SimpleMessageNotification/smn-sdk-python/wiki)
 
 
 Install step:
