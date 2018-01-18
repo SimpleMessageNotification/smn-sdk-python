@@ -23,7 +23,7 @@ from http.http_client import HttpClient
 logger = logging.getLogger(__name__)
 
 class SMNClient():
-    SMN_ENDPOINT = 'smn.%s.myhwclouds.com'
+    SMN_ENDPOINT = 'smn.%s.myhuaweicloud.com'
     def __init__(
             self,
             domain_name=None,
