@@ -84,7 +84,7 @@ class Auth():
     }
     }
     
-    IAM_ENDPOINT = 'iam.%s.myhwclouds.com'
+    IAM_ENDPOINT = 'iam.%s.myhuaweicloud.com'
     API_PATH = '/v3/auth/tokens'
     
     def __init__(self,
