@@ -11,7 +11,7 @@
 #Apache License, Version 2.0 for more detail
 
 __author__ = 'pengzl'
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 import logging
 
 def set_stream_logger(name='auth', level=logging.DEBUG, format_string=None):
