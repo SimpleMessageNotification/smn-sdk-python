@@ -18,6 +18,11 @@ __author__ = 'pengzl'
 import time
 from smnsdkcore.client import SMNClient
 from smnsdkrequests.v20171105.SmsPublish import SmsPublish
+from smnsdkrequests.v20171105.PromotionSmsPublish import PromotionSmsPublish
+from smnsdkrequests.v20171105.CreateSmsTemplate import CreateSmsTemplate
+from smnsdkrequests.v20171105.ListSmsTemplates import ListSmsTemplates
+from smnsdkrequests.v20171105.GetSmsTemplateDetail import GetSmsTemplateDetail
+from smnsdkrequests.v20171105.DeleteSmsTemplate import DeleteSmsTemplate
 
 from smnsdkcore import set_stream_logger
 from smnsdkrequests.v20171105.ListSmsSigns import ListSmsSigns
@@ -28,11 +33,47 @@ from smnsdkrequests.v20171105.ListSmsEvent import ListSmsEvent
 from smnsdkrequests.v20171105.UpdateSmsEvent import UpdateSmsEvent
 
 
-def demoSendSms(sms_sign_id, endpoint, message):
+def demoSendNotifySms(sms_sign_id, endpoint, message):
     request = SmsPublish()
     request.set_endpoint(endpoint)
     request.set_message(message)
     request.set_sign_id(sms_sign_id)
+    return client.send(request)
+
+def demoSendPromotionSms():
+    request = PromotionSmsPublish()
+    request.set_endpoints(['8613688807587', '8618682160029'])
+    request.set_sign_id('47f86cf7c9a7449d98ee61cf193a1060')
+    request.set_sms_template_id('bfda25c6406e42ddabad74b4a20f6d05')
+    return client.send(request)
+
+def demoCreateSmsTemplate():
+    request = CreateSmsTemplate()
+    request.set_sms_template_content('买买买')
+    request.set_sms_template_name('python-SDK-测试模板')
+    # 设置模板，0表示通知验证码类，1表示推广营销类
+    request.set_sms_template_type(1)
+    request.set_remark('python SDK 测试')
+    return client.send(request)
+
+def demoListSmsTemplates():
+    request = ListSmsTemplates()
+    request.set_offset(0)
+    request.set_limit(20)
+    request.set_sms_template_name('模板')
+    #0：审批中 1：审批通过 2：审批不通过 3：已失效
+    # request.set_status(1)
+    request.set_sms_template_type(1)
+    return client.send(request)
+
+def demoGetSmsTemplateDetail():
+    request = GetSmsTemplateDetail()
+    request.set_sms_template_id('bfda25c6406e42ddabad74b4a20f6d05')
+    return client.send(request)
+
+def demoDeleteSmsTemplate():
+    request = DeleteSmsTemplate()
+    request.set_sms_template_id('21dda6d7443b4fdc9f07d4313d7747ed')
     return client.send(request)
 
 def demoListSmsSigns():
@@ -92,7 +133,28 @@ if __name__ == "__main__":
     topic_urn_for_envent = 'urn:smn:cn-north-1:cffe4fc4c9a54219b60dbaf7b586e132:sms_event_urn'
     delete_sms_envent = ''
 
-    status, headers, response_body = demoSendSms(sms_sign_id, phoneNumber, message)
+    # 发送通知验证码类短信
+    status, headers, response_body = demoSendNotifySms(sms_sign_id, phoneNumber, message)
+    print status, response_body
+
+    # 发送推广类短信
+    status, headers, response_body = demoSendPromotionSms()
+    print status, response_body
+
+    # 创建短信模板
+    status, headers, response_body = demoCreateSmsTemplate()
+    print status, response_body
+
+    # 查询短信模板列表
+    status, headers, response_body = demoListSmsTemplates()
+    print status, response_body
+
+    # 查询短信模板详情
+    status, headers, response_body = demoGetSmsTemplateDetail()
+    print status, response_body
+
+    # 删除短信模板
+    status, headers, response_body = demoDeleteSmsTemplate()
     print status, response_body
 
     '''

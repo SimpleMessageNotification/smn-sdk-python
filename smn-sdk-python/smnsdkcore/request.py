@@ -16,6 +16,7 @@ create at 2017/11/4
 __author__ = 'pengzl'
 
 from http import httpmethod
+from urllib import quote
 
 class CommonRequest(object):
     def __init__(self):
@@ -48,7 +49,7 @@ class CommonRequest(object):
         if self._query_param:
             uri = uri + '?'
             for key in self._query_param:
-                uri = uri + key + '=' + str(self._query_param[key]) + '&'
+                uri = uri + key + '=' + quote(str(self._query_param[key])) + '&'
         return uri
     
     def add_header(self, key, value):

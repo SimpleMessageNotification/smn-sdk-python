@@ -7,9 +7,9 @@ Welcome to use the SMN Services Python SDK. SMN Services The Python SDK simplifi
 
 
 Install step:
-1. Download sdk package in dist dir, that is  smn-sdk-python-1.0.0.zip
-2. Unzip the package, then auto generate dir smn-sdk-python-1.0.0 in current dir.
-3. cd into smn-sdk-python-1.0.0
+1. Download sdk package in dist dir, that is  smn-sdk-python-1.0.1.zip
+2. Unzip the package, then auto generate dir smn-sdk-python-1.0.1 in current dir.
+3. cd into smn-sdk-python-1.0.1
 4. exectue python setup.py install
 
 
