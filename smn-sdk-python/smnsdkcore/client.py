@@ -100,7 +100,7 @@ class SMNClient():
         request.add_header('X-Auth-Token', x_auth_token)
 
     def _resovle_endpoiint(self):
-        return self.SMN_ENDPOINT % (self.__region_id)
+        return self.SMN_ENDPOINT % (self.__region_id.split('_')[0])
 
     def _resolve_url(self, request):
         project_id = self.__authentication.get_project_id()
