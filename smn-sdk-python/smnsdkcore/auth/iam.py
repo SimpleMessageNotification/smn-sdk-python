@@ -209,7 +209,7 @@ class Auth():
         self._project_id = project_id
     
     def _get_endpoint(self):
-        return self.IAM_ENDPOINT %(self.get_region_id())
+        return self.IAM_ENDPOINT %(self.get_region_id().split('_')[0])
         
     def get_region_id(self):
         return self._region_id
