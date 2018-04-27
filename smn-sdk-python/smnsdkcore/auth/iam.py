@@ -209,7 +209,11 @@ class Auth():
         self._project_id = project_id
     
     def _get_endpoint(self):
-        return self.IAM_ENDPOINT %(self.get_region_id().split('_')[0])
+        if self.get_region_id().lower().startswith('dec'):
+            region = self.get_region_id().split('_')[1]
+        else:
+            region = self.get_region_id().split('_')[0]
+        return self.IAM_ENDPOINT %(region)
         
     def get_region_id(self):
         return self._region_id
