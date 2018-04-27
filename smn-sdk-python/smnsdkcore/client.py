@@ -80,7 +80,7 @@ class SMNClient():
             smn_request.add_header('User-Agent', self._get_user_agent())
         self._set_authentication(smn_request)
 
-        endpoint = self._resovle_endpoiint()
+        endpoint = self._resovle_endpoint()
         if smn_request.get_request_body_param():
             req_body = json.dumps(smn_request.get_request_body_param())
         else:
@@ -99,8 +99,12 @@ class SMNClient():
         x_auth_token = self.__authentication.get_x_auth_token()
         request.add_header('X-Auth-Token', x_auth_token)
 
-    def _resovle_endpoiint(self):
-        return self.SMN_ENDPOINT % (self.__region_id.split('_')[0])
+    def _resovle_endpoint(self):
+        if self.__region_id.lower().startswith('dec'):
+            region = self.__region_id.split('_')[1]
+        else:
+            region = self.__region_id.split('_')[0]
+        return self.SMN_ENDPOINT % (region)
 
     def _resolve_url(self, request):
         project_id = self.__authentication.get_project_id()
