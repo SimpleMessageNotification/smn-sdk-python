@@ -43,6 +43,7 @@ smnsdkrequests/v20171105/ListTopicAttribute.py
 smnsdkrequests/v20171105/ListTopics.py
 smnsdkrequests/v20171105/PromotionSmsPublish.py
 smnsdkrequests/v20171105/Publish.py
+smnsdkrequests/v20171105/PublishTenantEmail.py
 smnsdkrequests/v20171105/QueryMessageTemplateDetail.py
 smnsdkrequests/v20171105/QueryTopicDetail.py
 smnsdkrequests/v20171105/SmsPublish.py
