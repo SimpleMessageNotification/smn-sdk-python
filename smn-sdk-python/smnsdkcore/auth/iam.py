@@ -143,7 +143,10 @@ class Auth():
                 self._set_x_auth_token(header[1])
                 logger.debug('Success to get x-auth-token from iam server.')
                 return header[1]
-        
+
+    def clean_token(self):
+        self._set_x_auth_token(None)
+
     def _get_x_auth_token_request(self):
         body = self.X_AUTH_TOKEN_REQUEST_BODY
         body.get('auth').get('identity').get('password').get('user')['name'] = self._get_username()
