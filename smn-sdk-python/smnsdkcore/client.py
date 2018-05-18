@@ -93,7 +93,16 @@ class SMNClient():
                                 body=req_body,
                                 timeout=self._connect_timeout
                                 )
-        return httpclient.get_https_response()
+        status, headers, response_body = httpclient.get_https_response()
+
+        if status == 401 or status == 403:
+            self.clean_token()
+
+        return status, headers, response_body
+
+    def clean_token(self):
+        if self.__authentication:
+            self.__authentication.clean_token()
 
     def _set_authentication(self, request):
         x_auth_token = self.__authentication.get_x_auth_token()
