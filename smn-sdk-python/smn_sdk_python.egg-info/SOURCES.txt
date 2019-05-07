@@ -2,6 +2,8 @@ LICENSE
 MANIFEST.in
 README.rst
 setup.py
+apig_sdk/__init__.py
+apig_sdk/signer.py
 smn_sdk_python.egg-info/PKG-INFO
 smn_sdk_python.egg-info/SOURCES.txt
 smn_sdk_python.egg-info/dependency_links.txt
