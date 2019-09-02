@@ -69,15 +69,6 @@ HeaderAuthorization = "Authorization"
 HeaderContentSha256 = "x-sdk-content-sha256"
 
 
-# Build a CanonicalRequest from a regular request string
-#
-# CanonicalRequest =
-#  HTTPRequestMethod + '\n' +
-#  CanonicalURI + '\n' +
-#  CanonicalQueryString + '\n' +
-#  CanonicalHeaders + '\n' +
-#  SignedHeaders + '\n' +
-#  HexEncode(Hash(RequestPayload))
 def CanonicalRequest(r, signedHeaders):
     canonicalHeaders = CanonicalHeaders(r, signedHeaders)
     hexencode = findHeader(r, HeaderContentSha256)
